@@ -1,5 +1,11 @@
 const {hash}=window.location;
-console.log(atob(hash.replace('#', '')));
+const message=atob(hash.replace('#', ''));
+if(message){
+    document.querySelector("#messageForm").classList.add('hide');
+    document.querySelector("#messageShow").classList.remove('hide');
+
+    document.querySelector('h1').innerHTML=message;
+}
 
 document.querySelector('form').addEventListener('submit',event=>{
     event.preventDefault();
